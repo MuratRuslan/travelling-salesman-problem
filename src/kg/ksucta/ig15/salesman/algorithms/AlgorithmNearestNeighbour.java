@@ -8,15 +8,11 @@ import java.util.*;
 public class AlgorithmNearestNeighbour implements AlgorithmShortestPath{
 
     private List<Punkt> punkts;
-    public static int Y_MIN;
-    public static int Y_MAX;
 
 
 
     public AlgorithmNearestNeighbour(List<Punkt> punkts) {
         this.punkts = new ArrayList<>(punkts);
-        Y_MIN = punkts.get(0).getY();
-        Y_MAX = punkts.get(0).getY();
         initAdjacencyMatrix();
     }
 

@@ -1,8 +1,8 @@
 package kg.ksucta.ig15.salesman.model;
 
-import kg.ksucta.ig15.salesman.algorithms.AlgorithmNearestNeighbour;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class Punkt implements Comparable<Punkt> {
 
@@ -37,7 +37,7 @@ public class Punkt implements Comparable<Punkt> {
     }
 
     public int[] toArray() {
-        return new int[] {x , y};
+        return new int[]{x, y};
     }
 
     @Override
@@ -47,15 +47,10 @@ public class Punkt implements Comparable<Punkt> {
 
     @Override
     public int compareTo(Punkt other) {
-        if(y < AlgorithmNearestNeighbour.Y_MIN) {
-            AlgorithmNearestNeighbour.Y_MIN = y;
-        } else if (y > AlgorithmNearestNeighbour.Y_MAX){
-            AlgorithmNearestNeighbour.Y_MAX = y;
-        }
-        if((x == other.getX() && y > other.y) || x > other.x) {
+        if ((x == other.getX() && y > other.y) || x > other.x) {
             return 1;
         }
-        if(x == other.getX() && y == other.y){
+        if (x == other.getX() && y == other.y) {
             return 0;
         }
         return -1;
@@ -63,8 +58,8 @@ public class Punkt implements Comparable<Punkt> {
 
     public Punkt findMinEdge() throws NoSuchElementException {
         Punkt min = edges.keySet().iterator().next();
-        for(Punkt punkt : edges.keySet()) {
-            if(edges.get(punkt) < edges.get(min)) {
+        for (Punkt punkt : edges.keySet()) {
+            if (edges.get(punkt) < edges.get(min)) {
                 min = punkt;
             }
         }

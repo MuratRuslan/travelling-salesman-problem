@@ -1,5 +1,6 @@
 package kg.ksucta.ig15.salesman;
 
+import kg.ksucta.ig15.salesman.algorithms.AlgorithmCardiogram;
 import kg.ksucta.ig15.salesman.algorithms.AlgorithmNearestNeighbour;
 import kg.ksucta.ig15.salesman.dao.PunktRepositoryCsv;
 import kg.ksucta.ig15.salesman.dao.Repository;
