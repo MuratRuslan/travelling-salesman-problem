@@ -37,28 +37,23 @@ public class AlgorithmNearestNeighbour implements AlgorithmShortestPath{
     public Weg getShortestPath() {
         Collections.sort(punkts);
 
-        List<Punkt> down = new ArrayList<>();
-        Stack<Punkt> stack = new Stack<>();
-        down.add(punkts.get(0));
+        List<Punkt> result = new ArrayList<>();
+        result.add(punkts.get(0));
         remove(punkts.get(0));
         try{
             Punkt punkt = punkts.get(0);
-            while (!down.get(0).getEdges().isEmpty()) {
+            while (!result.get(0).getEdges().isEmpty()) {
                 Punkt minEdge = punkt.findMinEdge();
-                down.add(minEdge);
+                result.add(minEdge);
                 remove(minEdge);
                 punkt = minEdge;
             }
         } catch (NoSuchElementException e) {
-            return new Weg(down);
+            return new Weg(result);
         }
 
 
-        while (!stack.empty()) {
-            down.add(stack.pop());
-        }
-
-        return new Weg(down);
+        return new Weg(result);
     }
 
 
