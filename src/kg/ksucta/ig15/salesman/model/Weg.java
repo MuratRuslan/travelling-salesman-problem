@@ -13,7 +13,7 @@ public class Weg {
         return weg;
     }
 
-    public synchronized double distance() {
+    public double distance() {
         return distance(weg);
     }
 

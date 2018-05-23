@@ -1,6 +1,5 @@
 package kg.ksucta.ig15.salesman.dao;
 
-import kg.ksucta.ig15.salesman.model.Punkt;
 
 import java.util.List;
 
