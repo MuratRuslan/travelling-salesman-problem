@@ -2,6 +2,7 @@ package kg.ksucta.ig15.salesman;
 
 import kg.ksucta.ig15.salesman.algorithms.AlgorithmCardiogram;
 import kg.ksucta.ig15.salesman.algorithms.AlgorithmNearestNeighbour;
+import kg.ksucta.ig15.salesman.algorithms.AlgorithmShortestPath;
 import kg.ksucta.ig15.salesman.dao.PunktRepositoryCsv;
 import kg.ksucta.ig15.salesman.dao.Repository;
 import kg.ksucta.ig15.salesman.model.Punkt;
@@ -33,8 +34,8 @@ public class Main {
         List<Punkt> punkts = punktRepository.findAll();
         System.out.println("Pfadlange: " + Weg.distance(punkts));
 
-        AlgorithmNearestNeighbour algorithmNearestNeighbour = new AlgorithmNearestNeighbour(punkts);
-        Weg shortestPath = algorithmNearestNeighbour.getShortestPath();
+        AlgorithmShortestPath algorithm = new AlgorithmNearestNeighbour(punkts);
+        Weg shortestPath = algorithm.getShortestPath();
         shortestPath.getWeg().forEach(System.out::println);
         System.out.println("Pfadlange: " + shortestPath.distance());
 
