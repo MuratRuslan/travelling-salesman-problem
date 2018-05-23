@@ -35,8 +35,6 @@ public class AlgorithmNearestNeighbour implements AlgorithmShortestPath{
 
     @Override
     public Weg getShortestPath() {
-        Collections.sort(punkts);
-
         List<Punkt> result = new ArrayList<>();
         result.add(punkts.get(0));
         remove(punkts.get(0));
